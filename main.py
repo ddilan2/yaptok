@@ -36,7 +36,7 @@ def get_summary(tiktok_url: str) -> str:
 
     # Get summary of transcript
     client = genai.Client()
-    contents = "Summarize the key points from the following transcript in 5-7 short bullet points. Focus only on the most important takeaways and provide a one-sentence, high-level summary at the top. Include no boilerplate, only the summary and bullet points formatted with plain text: \n" + transcript
+    contents = "Summarize the key points from the following transcript and make sure to relay the most important/interesting points. Use 1-3 sentences, if a complete summary only requires one sentence, use one. Otherwise, use 2 or 3. \n" + transcript
     response = client.models.generate_content(model="gemini-3-flash-preview", contents=contents)
     
     # Return the summary
